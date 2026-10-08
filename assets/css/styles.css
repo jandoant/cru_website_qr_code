@@ -1,0 +1,442 @@
+/* ==========================================================================
+   Chemnitz Crusaders – link page
+   Naming: BEM (block__element--modifier)
+   ========================================================================== */
+
+/* Design tokens
+   ========================================================================== */
+
+:root {
+  /* Brand */
+  --color-red: #e01f3b;
+  --color-red-dark: #a41a2e;
+  --color-red-tint: #fdf3f4;
+
+  /* Text */
+  --color-ink: #2a2b2d;
+  --color-muted: #5b6266;
+  --color-label: #7f9399;
+  --color-on-dark-muted: #b6c3c7;
+
+  /* Surfaces */
+  --color-white: #fff;
+  --color-page: #f6f8f8;
+  --color-backdrop: #ecefef;
+  --color-chip: #e3eeee;
+  --color-line: #dde4e5;
+
+  /* Typography */
+  --font-family-base: Montserrat, system-ui, sans-serif;
+}
+
+/* Base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-family-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-red);
+  outline-offset: 3px;
+}
+
+/* Page layout
+   ========================================================================== */
+
+.page {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  background: var(--color-page);
+  overflow: hidden;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* On larger screens show the page as a phone-sized card */
+@media (min-width: 520px) {
+  body {
+    background: var(--color-backdrop);
+    padding: 40px 16px;
+  }
+
+  .page {
+    max-width: 390px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 28px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Hero
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  padding: 30px 24px 22px;
+  overflow: hidden;
+}
+
+.hero__stripes {
+  position: absolute;
+  right: -40px;
+  top: 46px;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  transform: rotate(-6deg);
+  opacity: 0.9;
+}
+
+.hero__stripe {
+  display: block;
+  height: 9px;
+}
+
+.hero__stripe:nth-child(1) {
+  background: linear-gradient(90deg, var(--color-red) 30%, var(--color-ink) 30%);
+}
+
+.hero__stripe:nth-child(2) {
+  background: linear-gradient(90deg, var(--color-red) 45%, var(--color-ink) 45%);
+}
+
+.hero__stripe:nth-child(3) {
+  background: linear-gradient(90deg, var(--color-red) 60%, var(--color-ink) 60%);
+}
+
+.hero__logo {
+  position: relative;
+  display: block;
+  width: 150px;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+
+.hero__title {
+  position: relative;
+  margin: 18px 0 0;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(34px, 10.3vw, 40px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.hero__highlight {
+  font-style: inherit;
+  color: var(--color-red);
+}
+
+.hero__tagline {
+  margin: 10px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+/* Link list
+   ========================================================================== */
+
+.links {
+  padding: 0 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.links__label {
+  margin: 0;
+  padding: 12px 8px 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-label);
+}
+
+.links__label:first-of-type {
+  padding-top: 8px;
+}
+
+/* Promo card (Gewinnspiel) – the most prominent link
+   ========================================================================== */
+
+.promo {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--color-white);
+  color: var(--color-ink);
+  border: 2.5px solid var(--color-red);
+  padding: 22px 20px 20px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.promo:hover {
+  transform: translateY(-2px);
+  background: var(--color-red-tint);
+}
+
+.promo:active {
+  transform: translateY(1px);
+}
+
+.promo__stripes {
+  position: absolute;
+  right: -16px;
+  top: 14px;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  transform: rotate(-6deg);
+  pointer-events: none;
+}
+
+.promo__stripe {
+  display: block;
+  height: 7px;
+  background: var(--color-red);
+  transform-origin: right;
+  animation: promo-stripe-pulse 4s ease-in-out infinite;
+}
+
+.promo__stripe:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.promo__stripe:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.promo__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 230px;
+}
+
+.promo__kicker {
+  padding-bottom: 22px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+
+.promo__title {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.promo__text {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--color-muted);
+  text-wrap: pretty;
+}
+
+.promo__cta {
+  position: relative;
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-red);
+  color: var(--color-white);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@keyframes promo-stripe-pulse {
+  0% {
+    transform: scaleX(0.35);
+  }
+
+  50% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0.35);
+  }
+}
+
+/* Link row
+   ========================================================================== */
+
+.row {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 16px;
+  background: var(--color-white);
+  color: var(--color-ink);
+  border: 1px solid var(--color-line);
+  transition: transform 0.15s;
+}
+
+.row:hover {
+  transform: scale(1.02);
+}
+
+.row__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--color-chip);
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.row__icon--accent {
+  color: var(--color-red);
+}
+
+.row__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.row__title {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.row__subtitle {
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+/* Smaller trailing icon for external page links (chevron) */
+.row__trail--small {
+  font-size: 12px;
+}
+
+/* Dark variant */
+.row--dark {
+  background: var(--color-ink);
+  color: var(--color-white);
+  border-color: var(--color-ink);
+}
+
+.row--dark .row__icon {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+.row--dark .row__subtitle {
+  color: var(--color-on-dark-muted);
+}
+
+/* Social tiles
+   ========================================================================== */
+
+.social {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.social__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 6px;
+  border-radius: 16px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  color: var(--color-ink);
+  font-size: 12px;
+  font-weight: 700;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.social__link:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+}
+
+.social__icon {
+  font-size: 24px;
+}
+
+/* Footer
+   ========================================================================== */
+
+.footer {
+  padding: 20px 24px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.footer__link {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--color-ink);
+  font-weight: 700;
+  transition: color 0.15s;
+}
+
+.footer__link:hover {
+  color: var(--color-red);
+}
+
+/* Accessibility
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
