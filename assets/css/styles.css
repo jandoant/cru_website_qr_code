@@ -949,6 +949,69 @@ a.promo__cta:active {
   text-decoration: underline;
 }
 
+/* Training session card (training.html) */
+.session {
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+}
+
+.session__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.session__team {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.session__age {
+  flex-shrink: 0;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--color-chip);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+
+.session__line {
+  margin: 6px 0 0;
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.session__line i {
+  color: var(--color-red);
+  text-align: center;
+}
+
+.session__venue {
+  text-decoration: underline;
+  text-decoration-color: var(--color-line);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+
+.session__venue:hover {
+  color: var(--color-red);
+  text-decoration-color: var(--color-red);
+}
+
 /* Big full-width call to action */
 .cta {
   margin-top: 8px;
@@ -973,6 +1036,14 @@ a.promo__cta:active {
 
 .cta:active {
   transform: translateY(1px);
+}
+
+.cta--dark {
+  background: var(--color-ink);
+}
+
+.cta--dark:hover {
+  background: #000;
 }
 
 .cta__note {
