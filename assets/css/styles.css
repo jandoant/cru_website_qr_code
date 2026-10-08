@@ -876,26 +876,27 @@ a.promo__cta:active {
   color: var(--color-muted);
 }
 
-/* Dark variant (same look as .row--dark) */
-.fact--dark {
+/* Dark panel grouping a section; items inside stay white */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 4px -4px 0;
+  padding: 14px 12px 12px;
+  border-radius: 20px;
+}
+
+.panel--dark {
   background: var(--color-ink);
-  border-color: var(--color-ink);
-  color: var(--color-white);
 }
 
-.fact--dark .row__icon {
-  background: var(--color-red);
-  color: var(--color-white);
-}
-
-.fact--dark .fact__label,
-.fact--dark .fact__sub {
+.panel--dark .links__label {
+  padding-top: 0;
   color: var(--color-on-dark-muted);
 }
 
-/* Lighter red so the map link stays readable on dark */
-.fact--dark .fact__link {
-  color: #ff6b80;
+.panel--dark .fact {
+  border-color: var(--color-white);
 }
 
 /* Timeline inside a fact row */
