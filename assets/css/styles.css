@@ -341,8 +341,134 @@ a.promo__cta:active {
   transform: none;
 }
 
-.promo--red .promo__stripe {
-  background: rgba(255, 255, 255, 0.35);
+/* Thrown football (replaces the stripes on the red card)
+   The ball keeps its angle; its seams and laces roll around the long axis
+   to fake a 3D spiral. One seam pass = half a turn across the visible side. */
+.promo__ball {
+  --spin: 0.9s;
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+  animation: ball-flight 2.4s ease-in-out infinite;
+}
+
+.promo__ball svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.promo__ball-body {
+  fill: url(#ball-shade);
+}
+
+.promo__ball-seam,
+.promo__ball-band,
+.promo__ball-laces,
+.promo__ball-trail {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.promo__ball-seam {
+  stroke: var(--color-red);
+  stroke-width: 1.2;
+  opacity: 0;
+  transform-origin: 50px 50px;
+  animation: ball-seam var(--spin) linear infinite;
+}
+
+.promo__ball-seam:nth-child(2) {
+  animation-delay: calc(var(--spin) * -0.25);
+}
+
+.promo__ball-seam:nth-child(3) {
+  animation-delay: calc(var(--spin) * -0.5);
+}
+
+.promo__ball-seam:nth-child(4) {
+  animation-delay: calc(var(--spin) * -0.75);
+}
+
+.promo__ball-band {
+  stroke: var(--color-red);
+  stroke-width: 3.5;
+}
+
+.promo__ball-laces {
+  stroke: var(--color-red);
+  stroke-width: 3;
+  transform-origin: 50px 50px;
+  animation: ball-laces var(--spin) linear infinite;
+}
+
+.promo__ball-trail {
+  stroke: var(--color-white);
+  stroke-width: 2.5;
+}
+
+.promo__ball-trail path {
+  animation: ball-trail 0.8s linear infinite;
+}
+
+.promo__ball-trail path:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.promo__ball-trail path:nth-child(3) {
+  animation-delay: -0.55s;
+}
+
+/* Gentle bob, like the ball riding through the air */
+@keyframes ball-flight {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(-3px, -5px) rotate(-3deg);
+  }
+}
+
+/* A seam travels from the top edge (scaleY 1) across the middle (0) to the
+   bottom edge (-1) on the visible side, then is hidden while it goes round the back.
+   Steps follow sin() so the motion speeds up in the middle like a real rotation. */
+@keyframes ball-seam {
+  0% { transform: scaleY(1); opacity: 1; }
+  8.33% { transform: scaleY(0.866); }
+  16.67% { transform: scaleY(0.5); }
+  25% { transform: scaleY(0); }
+  33.33% { transform: scaleY(-0.5); }
+  41.67% { transform: scaleY(-0.866); }
+  49.99% { transform: scaleY(-1); opacity: 1; }
+  50% { opacity: 0; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+/* Laces follow the first seam (offset = seam bulge of 24 units) and
+   foreshorten (scaleY = cos) towards the edges */
+@keyframes ball-laces {
+  0% { transform: translateY(-24px) scaleY(0); opacity: 1; }
+  8.33% { transform: translateY(-20.8px) scaleY(0.5); }
+  16.67% { transform: translateY(-12px) scaleY(0.866); }
+  25% { transform: translateY(0) scaleY(1); }
+  33.33% { transform: translateY(12px) scaleY(0.866); }
+  41.67% { transform: translateY(20.8px) scaleY(0.5); }
+  49.99% { transform: translateY(24px) scaleY(0); opacity: 1; }
+  50% { opacity: 0; }
+  100% { transform: translateY(-24px) scaleY(0); opacity: 0; }
+}
+
+/* Speed lines drift backwards and fade */
+@keyframes ball-trail {
+  0% { transform: translateX(4px); opacity: 0; }
+  30% { opacity: 0.8; }
+  100% { transform: translateX(-10px); opacity: 0; }
 }
 
 .promo--red .promo__kicker {
@@ -862,6 +988,11 @@ a.promo__cta:active {
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
+  .promo__ball-seam,
+  .promo__ball-trail {
+    display: none;
+  }
+
   *,
   *::before,
   *::after {
