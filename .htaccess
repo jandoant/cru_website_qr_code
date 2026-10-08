@@ -1,0 +1,18 @@
+# Apache settings for 1blu (or any Apache host)
+
+# Serve web fonts with the correct content type.
+# Older servers don't know .woff2 and send it as text or octet-stream,
+# which can make browsers reject the icon and text fonts.
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType font/woff  .woff
+  AddType font/ttf   .ttf
+  AddType image/svg+xml .svg
+</IfModule>
+
+# Let browsers cache fonts for a long time (they never change)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff  "access plus 1 year"
+</IfModule>
