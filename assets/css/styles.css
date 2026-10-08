@@ -1256,13 +1256,11 @@ a.promo__cta:active {
 /* The "dark" button would vanish on a dark page, so it flips to light */
 .theme-dark .cta--dark {
   background: var(--color-white);
-  color: var(--color-red);
-  border: 3px solid var(--color-red);
+  color: #1b1c1e;
 }
 
 .theme-dark .cta--dark:hover {
-  background: var(--color-red);
-  color: var(--color-white);
+  background: #dfe5e7;
 }
 
 /* Accessibility
