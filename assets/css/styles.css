@@ -876,6 +876,28 @@ a.promo__cta:active {
   color: var(--color-muted);
 }
 
+/* Dark variant (same look as .row--dark) */
+.fact--dark {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-white);
+}
+
+.fact--dark .row__icon {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+.fact--dark .fact__label,
+.fact--dark .fact__sub {
+  color: var(--color-on-dark-muted);
+}
+
+/* Lighter red so the map link stays readable on dark */
+.fact--dark .fact__link {
+  color: #ff6b80;
+}
+
 /* Timeline inside a fact row */
 .schedule {
   margin: 6px 0 0;
