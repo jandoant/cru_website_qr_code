@@ -1212,11 +1212,22 @@ a.promo__cta:active {
 }
 
 /* Cards use the raised dark surface instead of white */
-.theme-dark .session,
 .theme-dark .card,
 .theme-dark .fact,
 .theme-dark .row {
   background: var(--color-surface);
+}
+
+/* Team cards stay white on the dark page: re-map the tokens back to light inside them */
+.theme-dark .session {
+  --color-ink: #2a2b2d;
+  --color-muted: #5b6266;
+  --color-chip: #e3eeee;
+  --color-line: #dde4e5;
+
+  background: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-ink);
 }
 
 .theme-dark .page {
