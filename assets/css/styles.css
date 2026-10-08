@@ -1230,6 +1230,15 @@ a.promo__cta:active {
   color: var(--color-ink);
 }
 
+/* Coloured border per discipline (matches the heading bar) */
+.theme-dark .session--tackle {
+  border: 3px solid var(--color-red);
+}
+
+.theme-dark .session--flag {
+  border: 3px solid var(--color-amber);
+}
+
 .theme-dark .page {
   border-color: rgba(255, 255, 255, 0.06);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
