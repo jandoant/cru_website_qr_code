@@ -12,6 +12,10 @@
   --color-red-dark: #a41a2e;
   --color-red-tint: #fdf3f4;
 
+  /* Info accent (e.g. winter training times) – same saturation/lightness as the red */
+  --color-blue: #1c74cf;
+  --color-blue-tint: #f2f7fd;
+
   /* Text */
   --color-ink: #2a2b2d;
   --color-muted: #5b6266;
@@ -778,6 +782,16 @@ a.promo__cta:active {
 
 .notice__text strong {
   color: var(--color-ink);
+}
+
+/* Blue info variant */
+.notice--info {
+  background: var(--color-blue-tint);
+  border-color: var(--color-blue);
+}
+
+.notice--info .notice__badge {
+  background: var(--color-blue);
 }
 
 .notice__cta {
