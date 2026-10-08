@@ -1177,14 +1177,6 @@ a.promo__cta:active {
   transform: translateY(1px);
 }
 
-.cta--dark {
-  background: var(--color-ink);
-}
-
-.cta--dark:hover {
-  background: #000;
-}
-
 .cta__note {
   margin: 0;
   padding: 2px 8px 0;
@@ -1260,16 +1252,6 @@ a.promo__cta:active {
 /* Slightly lighter green so outlines and text stay readable on dark */
 .theme-dark .notice--green .notice__cta {
   color: #3fbf7a;
-}
-
-/* The "dark" button would vanish on a dark page, so it flips to light */
-.theme-dark .cta--dark {
-  background: var(--color-white);
-  color: #1b1c1e;
-}
-
-.theme-dark .cta--dark:hover {
-  background: #dfe5e7;
 }
 
 /* Accessibility
