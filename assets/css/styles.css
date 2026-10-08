@@ -918,26 +918,6 @@ a.promo__cta:active {
   color: var(--color-red);
 }
 
-/* Inline SVG icon in a card title (e.g. the football helmet) */
-.card__icon {
-  flex-shrink: 0;
-  width: 1.5em;
-  height: 1.5em;
-  color: var(--color-red);
-}
-
-.card__icon-solid {
-  fill: currentColor;
-}
-
-.card__icon-line {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 10;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
 /* Team / age group list */
 .teams {
   margin: 0;
