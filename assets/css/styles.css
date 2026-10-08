@@ -355,6 +355,21 @@ a.promo__cta:active {
   opacity: 0.9;
 }
 
+/* Inline map link in the card text */
+.promo__link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.promo__link i {
+  margin-right: 6px;
+}
+
+.promo__link:hover {
+  text-decoration-thickness: 2px;
+}
+
 .promo--red .promo__cta {
   background: var(--color-white);
   color: var(--color-red);
