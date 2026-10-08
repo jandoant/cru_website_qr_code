@@ -621,6 +621,26 @@ a.promo__cta:active {
   color: var(--color-on-dark-muted);
 }
 
+/* Red variant */
+.row--red {
+  background: var(--color-red);
+  color: var(--color-white);
+  border-color: var(--color-red);
+}
+
+.row--red .row__icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--color-white);
+}
+
+.row--red .row__subtitle {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.row--red:focus-visible {
+  outline-color: var(--color-ink);
+}
+
 /* Social tiles
    ========================================================================== */
 
