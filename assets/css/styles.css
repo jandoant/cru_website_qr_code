@@ -705,6 +705,7 @@ a.promo__cta:active {
 
 /* Narrower stripes so they stay clear of the shorter subpage title */
 .hero--sub .hero__stripes {
+  top: 26px;
   width: 190px;
   right: -60px;
 }
