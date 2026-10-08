@@ -12,6 +12,10 @@
   --color-red-dark: #a41a2e;
   --color-red-tint: #fdf3f4;
 
+  /* Info accent (e.g. winter training times) – same saturation/lightness as the red */
+  --color-blue: #1c74cf;
+  --color-blue-tint: #f2f7fd;
+
   /* Text */
   --color-ink: #2a2b2d;
   --color-muted: #5b6266;
@@ -780,6 +784,16 @@ a.promo__cta:active {
   color: var(--color-ink);
 }
 
+/* Blue info variant */
+.notice--info {
+  background: var(--color-blue-tint);
+  border-color: var(--color-blue);
+}
+
+.notice--info .notice__badge {
+  background: var(--color-blue);
+}
+
 .notice__cta {
   margin-top: 14px;
   display: flex;
@@ -949,6 +963,60 @@ a.promo__cta:active {
   text-decoration: underline;
 }
 
+/* Training session card (training.html) */
+.session {
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+}
+
+.session__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.session__team {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.session__age {
+  flex-shrink: 0;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--color-chip);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+
+.session__line {
+  margin: 6px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.session__venue {
+  text-decoration: underline;
+  text-decoration-color: var(--color-line);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+
+.session__venue:hover {
+  color: var(--color-red);
+  text-decoration-color: var(--color-red);
+}
+
 /* Big full-width call to action */
 .cta {
   margin-top: 8px;
@@ -975,6 +1043,14 @@ a.promo__cta:active {
   transform: translateY(1px);
 }
 
+.cta--dark {
+  background: var(--color-ink);
+}
+
+.cta--dark:hover {
+  background: #000;
+}
+
 .cta__note {
   margin: 0;
   padding: 2px 8px 0;
@@ -982,6 +1058,54 @@ a.promo__cta:active {
   line-height: 1.6;
   color: var(--color-muted);
   text-align: center;
+}
+
+/* Dark theme (opt-in per page: <body class="theme-dark">)
+   Re-maps the text/surface tokens; brand red and blue stay the same.
+   ========================================================================== */
+
+.theme-dark {
+  --color-ink: #f2f4f5;
+  --color-muted: #a7b2b6;
+  --color-label: #82969c;
+  --color-page: #1b1c1e;
+  --color-backdrop: #0e0f10;
+  --color-chip: #2f3337;
+  --color-line: #34383c;
+  --color-surface: #25272a;
+
+  color-scheme: dark;
+}
+
+/* Cards use the raised dark surface instead of white */
+.theme-dark .session,
+.theme-dark .card,
+.theme-dark .fact,
+.theme-dark .row {
+  background: var(--color-surface);
+}
+
+.theme-dark .page {
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.theme-dark .notice {
+  background: rgba(224, 31, 59, 0.12);
+}
+
+.theme-dark .notice--info {
+  background: rgba(28, 116, 207, 0.14);
+}
+
+/* The "dark" button would vanish on a dark page, so it flips to light */
+.theme-dark .cta--dark {
+  background: var(--color-white);
+  color: #1b1c1e;
+}
+
+.theme-dark .cta--dark:hover {
+  background: #dfe5e7;
 }
 
 /* Accessibility
