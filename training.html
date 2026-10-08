@@ -24,9 +24,6 @@
 
     <!-- Page styles (loaded last so they take precedence over libraries) -->
     <link rel="stylesheet" href="assets/css/styles.css">
-
-    <!-- Loads HTML components into [data-include] placeholders -->
-    <script src="assets/js/include.js" defer></script>
   </head>
 
   <body>
@@ -133,8 +130,28 @@
         <a class="footer__link footer__link--muted" href="https://www.chemnitz-crusaders.de" target="_blank" rel="noopener"><i class="fa-solid fa-globe" aria-hidden="true"></i>chemnitz-crusaders.de</a>
       </footer>
 
-      <!-- Club and section contact details (components/site-info.html) -->
-      <div data-include="components/site-info.html"></div>
+      <!-- Club and section contact details.
+           Same block on every page – when something changes, update it in all pages. -->
+      <div class="site-info">
+        <address class="site-info__col">
+          <span class="site-info__title">Chemnitzer Freizeit- und Wohngebietssportverein e.V.</span>
+          <span>Straße Usti nad Labem 42</span>
+          <span>09119 Chemnitz</span>
+          <span>Deutschland</span>
+          <span class="site-info__gap">Tel. <a href="tel:+493712823370">0371 28 23 370</a></span>
+          <span>Fax 0371 22 91 79</span>
+          <a href="https://www.cwsv-sport.de" target="_blank" rel="noopener">www.cwsv-sport.de</a>
+        </address>
+
+        <address class="site-info__col">
+          <span class="site-info__title">Abteilungsleiter Sektion American Football</span>
+          <span>Herr Manuel Kreische</span>
+          <span class="site-info__gap">Tel. <a href="tel:+493712823370">0371 28 23 370</a></span>
+          <a href="mailto:info@chemnitz-crusaders.de">info@chemnitz-crusaders.de</a>
+          <a class="site-info__gap" href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </address>
+      </div>
 
     </main>
   </body>
