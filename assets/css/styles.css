@@ -16,6 +16,9 @@
   --color-blue: #1c74cf;
   --color-blue-tint: #f2f7fd;
 
+  /* Flag football accent (tackle uses the brand red) */
+  --color-amber: #f2a900;
+
   /* Text */
   --color-ink: #2a2b2d;
   --color-muted: #5b6266;
@@ -963,12 +966,52 @@ a.promo__cta:active {
   text-decoration: underline;
 }
 
+/* Discipline heading (Tackle / Flag) with a coloured bar */
+.discipline {
+  --accent: var(--color-red);
+  margin: 0;
+  padding: 22px 4px 6px;
+  font-size: 26px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.discipline::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 5px;
+  margin-top: 10px;
+  background: var(--accent);
+  transform: skewX(-20deg);
+}
+
+.discipline--tackle {
+  --accent: var(--color-red);
+}
+
+.discipline--flag {
+  --accent: var(--color-amber);
+}
+
 /* Training session card (training.html) */
 .session {
   padding: 16px 18px;
   border-radius: 16px;
   background: var(--color-white);
   border: 1px solid var(--color-line);
+}
+
+/* Coloured left edge per discipline */
+.session--tackle {
+  border-left: 5px solid var(--color-red);
+}
+
+.session--flag {
+  border-left: 5px solid var(--color-amber);
 }
 
 .session__head {
