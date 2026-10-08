@@ -1263,6 +1263,48 @@ a.promo__cta:active {
   text-align: center;
 }
 
+/* Legal notice (impressum.html)
+   ========================================================================== */
+
+.legal {
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.legal p {
+  margin: 0 0 14px;
+}
+
+.legal p:last-child {
+  margin-bottom: 0;
+}
+
+.legal__name {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.legal a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--color-line);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+
+.legal a:hover {
+  color: var(--color-red);
+  text-decoration-color: var(--color-red);
+}
+
 /* Volunteer role tiles (ehrenamt.html)
    ========================================================================== */
 
