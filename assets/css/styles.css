@@ -684,7 +684,7 @@ a.promo__cta:active {
    ========================================================================== */
 
 .footer {
-  padding: 20px 24px 28px;
+  padding: 20px 24px 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -702,6 +702,47 @@ a.promo__cta:active {
 }
 
 .footer__link:hover {
+  color: var(--color-red);
+}
+
+/* Club and section contact details (components/site-info.html) */
+.site-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 0 16px;
+  padding: 18px 8px 28px;
+  border-top: 1px solid var(--color-line);
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+.site-info__col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  font-style: normal;
+  overflow-wrap: anywhere;
+}
+
+.site-info__title {
+  margin-bottom: 4px;
+  font-weight: 800;
+  color: var(--color-ink);
+}
+
+.site-info__gap {
+  margin-top: 6px;
+}
+
+.site-info a {
+  color: var(--color-ink);
+  font-weight: 700;
+  transition: color 0.15s;
+}
+
+.site-info a:hover {
   color: var(--color-red);
 }
 
@@ -1220,6 +1261,92 @@ a.promo__cta:active {
   line-height: 1.6;
   color: var(--color-muted);
   text-align: center;
+}
+
+/* Legal notice (impressum.html)
+   ========================================================================== */
+
+.legal {
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.legal p {
+  margin: 0 0 14px;
+}
+
+.legal p:last-child {
+  margin-bottom: 0;
+}
+
+.legal__name {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.legal a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--color-line);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+
+.legal a:hover {
+  color: var(--color-red);
+  text-decoration-color: var(--color-red);
+}
+
+/* Long legal text (datenschutz.html) */
+.legal--prose {
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.legal--prose h2 {
+  margin: 22px 0 8px;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.legal--prose h2:first-child {
+  margin-top: 0;
+}
+
+.legal--prose p {
+  margin: 0 0 10px;
+}
+
+.legal--prose ul {
+  margin: 0 0 10px;
+  padding-left: 18px;
+}
+
+.legal--prose li {
+  margin-bottom: 4px;
+}
+
+.legal--prose a {
+  font-weight: 600;
+}
+
+.legal__source {
+  margin-top: 22px !important;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-line);
+  font-size: 11px;
+  color: var(--color-muted);
 }
 
 /* Volunteer role tiles (ehrenamt.html)
