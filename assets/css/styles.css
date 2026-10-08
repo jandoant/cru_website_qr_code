@@ -1060,6 +1060,54 @@ a.promo__cta:active {
   text-align: center;
 }
 
+/* Dark theme (opt-in per page: <body class="theme-dark">)
+   Re-maps the text/surface tokens; brand red and blue stay the same.
+   ========================================================================== */
+
+.theme-dark {
+  --color-ink: #f2f4f5;
+  --color-muted: #a7b2b6;
+  --color-label: #82969c;
+  --color-page: #1b1c1e;
+  --color-backdrop: #0e0f10;
+  --color-chip: #2f3337;
+  --color-line: #34383c;
+  --color-surface: #25272a;
+
+  color-scheme: dark;
+}
+
+/* Cards use the raised dark surface instead of white */
+.theme-dark .session,
+.theme-dark .card,
+.theme-dark .fact,
+.theme-dark .row {
+  background: var(--color-surface);
+}
+
+.theme-dark .page {
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.theme-dark .notice {
+  background: rgba(224, 31, 59, 0.12);
+}
+
+.theme-dark .notice--info {
+  background: rgba(28, 116, 207, 0.14);
+}
+
+/* The "dark" button would vanish on a dark page, so it flips to light */
+.theme-dark .cta--dark {
+  background: var(--color-white);
+  color: #1b1c1e;
+}
+
+.theme-dark .cta--dark:hover {
+  background: #dfe5e7;
+}
+
 /* Accessibility
    ========================================================================== */
 
