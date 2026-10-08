@@ -24,6 +24,9 @@
 
     <!-- Page styles (loaded last so they take precedence over libraries) -->
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Loads HTML components into [data-include] placeholders -->
+    <script src="assets/js/include.js" defer></script>
   </head>
 
   <body>
@@ -65,25 +68,9 @@
         </div>
 
         <!-- Promo: Gewinnspiel – currently DISABLED.
-             A <template> is never rendered, so the card stays in the file but is not shown.
-             To show it again: remove the <template> and </template> lines (and re-add
-             "Gewinnspiel" to the meta description in <head>). -->
-        <template id="promo-gewinnspiel">
-          <!-- TODO: replace with the real Gewinnspiel URL -->
-          <a class="promo" href="https://www.chemnitz-crusaders.de" target="_blank" rel="noopener">
-            <span class="promo__stripes" aria-hidden="true">
-              <span class="promo__stripe"></span>
-              <span class="promo__stripe"></span>
-              <span class="promo__stripe"></span>
-            </span>
-            <span class="promo__body">
-              <span class="promo__kicker">Aktion</span>
-              <span class="promo__title">Gewinnspiel</span>
-              <span class="promo__text">Alle Infos zur Teilnahme und zu den Preisen</span>
-            </span>
-            <span class="promo__cta">Teilnehmen<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-          </a>
-        </template>
+             The card lives in components/promo-gewinnspiel.html.
+             To show it: uncomment the line below (and re-add "Gewinnspiel" to the meta description). -->
+        <!-- <div data-include="components/promo-gewinnspiel.html"></div> -->
 
         <!-- Mitmachen -->
         <h2 class="links__label">Mitmachen</h2>
