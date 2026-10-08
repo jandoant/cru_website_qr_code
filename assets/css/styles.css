@@ -16,6 +16,13 @@
   --color-blue: #1c74cf;
   --color-blue-tint: #f2f7fd;
 
+  /* Green info accent (explanations, "Anmeldung freiwillig") */
+  --color-green: #178a4c;
+  --color-green-tint: #eef8f2;
+
+  /* Flag football accent (tackle uses the brand red) */
+  --color-amber: #f2a900;
+
   /* Text */
   --color-ink: #2a2b2d;
   --color-muted: #5b6266;
@@ -794,6 +801,26 @@ a.promo__cta:active {
   background: var(--color-blue);
 }
 
+/* Green variant (friendly info, e.g. registration is optional) */
+.notice--green {
+  background: var(--color-green-tint);
+  border-color: var(--color-green);
+}
+
+.notice--green .notice__badge {
+  background: var(--color-green);
+}
+
+.notice--green .notice__cta {
+  border-color: var(--color-green);
+  color: var(--color-green);
+}
+
+.notice--green .notice__cta:hover {
+  background: var(--color-green);
+  color: var(--color-white);
+}
+
 .notice__cta {
   margin-top: 14px;
   display: flex;
@@ -963,6 +990,113 @@ a.promo__cta:active {
   text-decoration: underline;
 }
 
+/* Discipline heading (Tackle / Flag) with a coloured bar */
+.discipline {
+  --accent: var(--color-red);
+  margin: 0;
+  padding: 22px 4px 6px;
+  font-size: 26px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.discipline::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 5px;
+  margin-top: 10px;
+  background: var(--accent);
+  transform: skewX(-20deg);
+}
+
+.discipline--tackle {
+  --accent: var(--color-red);
+}
+
+.discipline--flag {
+  --accent: var(--color-amber);
+}
+
+/* Expandable explanation next to a discipline heading (<details>) */
+.discipline-info__toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.discipline-info__toggle::-webkit-details-marker {
+  display: none;
+}
+
+.discipline-info__toggle:focus-visible {
+  outline: 3px solid var(--color-red);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Round "i" button, vertically centred on the heading text */
+.discipline-info__button {
+  flex-shrink: 0;
+  margin-top: 21px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--color-muted);
+  color: var(--color-muted);
+  font-size: 14px;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 1;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.discipline-info__toggle:hover .discipline-info__button {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.discipline-info[open] .discipline-info__button {
+  background: var(--color-green);
+  border-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.discipline-info__text {
+  margin: 4px 0 4px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--color-green-tint);
+  border: 2px solid var(--color-green);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-ink);
+  text-wrap: pretty;
+}
+
+/* Visually hidden, still read by screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Training session card (training.html) */
 .session {
   padding: 16px 18px;
@@ -1078,11 +1212,31 @@ a.promo__cta:active {
 }
 
 /* Cards use the raised dark surface instead of white */
-.theme-dark .session,
 .theme-dark .card,
 .theme-dark .fact,
 .theme-dark .row {
   background: var(--color-surface);
+}
+
+/* Team cards stay white on the dark page: re-map the tokens back to light inside them */
+.theme-dark .session {
+  --color-ink: #2a2b2d;
+  --color-muted: #5b6266;
+  --color-chip: #e3eeee;
+  --color-line: #dde4e5;
+
+  background: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-ink);
+}
+
+/* Coloured border per discipline (matches the heading bar) */
+.theme-dark .session--tackle {
+  border: 3px solid var(--color-red);
+}
+
+.theme-dark .session--flag {
+  border: 3px solid var(--color-amber);
 }
 
 .theme-dark .page {
@@ -1096,6 +1250,16 @@ a.promo__cta:active {
 
 .theme-dark .notice--info {
   background: rgba(28, 116, 207, 0.14);
+}
+
+.theme-dark .notice--green,
+.theme-dark .discipline-info__text {
+  background: rgba(23, 138, 76, 0.16);
+}
+
+/* Slightly lighter green so outlines and text stay readable on dark */
+.theme-dark .notice--green .notice__cta {
+  color: #3fbf7a;
 }
 
 /* The "dark" button would vanish on a dark page, so it flips to light */
