@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chemnitz Crusaders – Alle Links</title>
+<meta name="description" content="Alles zu den Chemnitz Crusaders: Gewinnspiel, Training, Staff &amp; Ehrenamt, Spielplan, Homepage und Social Media.">
+<meta name="theme-color" content="#F6F8F8">
+<meta property="og:title" content="Alles zu den Chemnitz Crusaders">
+<meta property="og:description" content="American Football in Chemnitz · seit 1994">
+<meta property="og:image" content="assets/crusaders-logo.png">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+  :root {
+    --red: #E01F3B;
+    --red-dark: #A41A2E;
+    --red-tint: #FDF3F4;
+    --ink: #2A2B2D;
+    --muted: #5B6266;
+    --label: #7F9399;
+    --line: #DDE4E5;
+    --chip: #E3EEEE;
+    --on-dark-muted: #B6C3C7;
+    --page: #F6F8F8;
+    --backdrop: #ECEFEF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--page);
+    color: var(--ink);
+    font-family: Montserrat, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+  a:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+
+  .page {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    background: var(--page);
+    overflow: hidden;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* On larger screens show the page as a phone-sized card */
+  @media (min-width: 520px) {
+    body { background: var(--backdrop); padding: 40px 16px; }
+    .page {
+      max-width: 390px;
+      border: 1px solid rgba(0, 0, 0, .08);
+      border-radius: 28px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, .12);
+    }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    padding: 30px 24px 22px;
+    overflow: hidden;
+  }
+  .hero-stripes {
+    position: absolute;
+    right: -40px;
+    top: 46px;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    transform: rotate(-6deg);
+    opacity: .9;
+  }
+  .hero-stripes span { display: block; height: 9px; }
+  .hero-stripes span:nth-child(1) { background: linear-gradient(90deg, var(--red) 30%, var(--ink) 30%); }
+  .hero-stripes span:nth-child(2) { background: linear-gradient(90deg, var(--red) 45%, var(--ink) 45%); }
+  .hero-stripes span:nth-child(3) { background: linear-gradient(90deg, var(--red) 60%, var(--ink) 60%); }
+  .logo {
+    position: relative;
+    display: block;
+    width: 150px;
+    height: auto;
+    mix-blend-mode: multiply;
+  }
+  .hero h1 {
+    position: relative;
+    margin: 18px 0 0;
+    font-weight: 900;
+    font-style: italic;
+    font-size: clamp(34px, 10.3vw, 40px);
+    line-height: .95;
+    text-transform: uppercase;
+    letter-spacing: -.01em;
+  }
+  .hero h1 em { font-style: inherit; color: var(--red); }
+  .tagline {
+    margin: 10px 0 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  /* ---------- Links ---------- */
+  .links {
+    padding: 0 16px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .section-label {
+    margin: 0;
+    padding: 12px 8px 0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--label);
+  }
+  .section-label:first-of-type { padding-top: 8px; }
+
+  /* Gewinnspiel – most prominent link */
+  .promo {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #fff;
+    color: var(--ink);
+    border: 2.5px solid var(--red);
+    padding: 22px 20px 20px;
+    transition: transform .2s, background-color .2s;
+  }
+  .promo:hover { transform: translateY(-2px); background: var(--red-tint); }
+  .promo:active { transform: translateY(1px); }
+  .promo-stripes {
+    position: absolute;
+    right: -16px;
+    top: 14px;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    transform: rotate(-6deg);
+    pointer-events: none;
+  }
+  .promo-stripes span {
+    display: block;
+    height: 7px;
+    background: var(--red);
+    transform-origin: right;
+    animation: cru-bar 4s ease-in-out infinite;
+  }
+  .promo-stripes span:nth-child(2) { animation-delay: .25s; }
+  .promo-stripes span:nth-child(3) { animation-delay: .5s; }
+  .promo-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 230px;
+  }
+  .promo-kicker {
+    padding-bottom: 22px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+  .promo-title {
+    font-weight: 900;
+    font-style: italic;
+    font-size: 30px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .promo-text {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--muted);
+    text-wrap: pretty;
+  }
+  .promo-cta {
+    position: relative;
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--red);
+    color: #fff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+
+  @keyframes cru-bar {
+    0%   { transform: scaleX(.35); }
+    50%  { transform: scaleX(1); }
+    100% { transform: scaleX(.35); }
+  }
+
+  /* List rows */
+  .row {
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    border-radius: 16px;
+    background: #fff;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    transition: transform .15s;
+  }
+  .row:hover { transform: scale(1.02); }
+  .row-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--chip);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .row-icon.accent { color: var(--red); }
+  .row-text { display: flex; flex-direction: column; gap: 2px; }
+  .row-title { font-weight: 800; font-size: 16px; }
+  .row-sub { font-size: 12px; color: var(--muted); }
+  .row .fa-chevron-right { font-size: 12px; }
+
+  .row.dark { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .row.dark .row-icon { background: var(--red); color: #fff; }
+  .row.dark .row-sub { color: var(--on-dark-muted); }
+
+  /* Social tiles */
+  .social {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .social a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 6px;
+    border-radius: 16px;
+    background: #fff;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 700;
+    transition: border-color .15s, color .15s;
+  }
+  .social a:hover { border-color: var(--red); color: var(--red); }
+  .social i { font-size: 24px; }
+
+  /* ---------- Footer ---------- */
+  .footer {
+    padding: 20px 24px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .footer a {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--ink);
+    font-weight: 700;
+    transition: color .15s;
+  }
+  .footer a:hover { color: var(--red); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="hero">
+    <div class="hero-stripes" aria-hidden="true"><span></span><span></span><span></span></div>
+    <img class="logo" src="assets/crusaders-logo.png" alt="Chemnitz Crusaders" width="600" height="525">
+    <h1>Alles zu<br>den <em>Crusaders</em></h1>
+    <p class="tagline">American Football in Chemnitz · seit 1994</p>
+  </header>
+
+  <nav class="links" aria-label="Links">
+
+    <!-- TODO: replace with the real Gewinnspiel URL -->
+    <a class="promo" href="https://www.chemnitz-crusaders.de" target="_blank" rel="noopener">
+      <span class="promo-stripes" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="promo-body">
+        <span class="promo-kicker">Aktion</span>
+        <span class="promo-title">Gewinnspiel</span>
+        <span class="promo-text">Alle Infos zur Teilnahme und zu den Preisen</span>
+      </span>
+      <span class="promo-cta">Teilnehmen<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+    </a>
+
+    <h2 class="section-label">Mitmachen</h2>
+    <a class="row dark" href="mailto:info@chemnitz-crusaders.de?subject=Training">
+      <span class="row-icon"><i class="fa-solid fa-football" aria-hidden="true"></i></span>
+      <span class="row-text"><span class="row-title">Training</span><span class="row-sub">Einfach vorbeikommen – Anfrage per Mail</span></span>
+      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </a>
+    <a class="row" href="mailto:info@chemnitz-crusaders.de?subject=Mitarbeit">
+      <span class="row-icon accent"><i class="fa-solid fa-people-group" aria-hidden="true"></i></span>
+      <span class="row-text"><span class="row-title">Staff &amp; Ehrenamt</span><span class="row-sub">Coaches, Helfer &amp; Orga gesucht</span></span>
+      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </a>
+
+    <h2 class="section-label">Zuschauen</h2>
+    <!-- TODO: replace with the schedule page URL -->
+    <a class="row" href="https://www.chemnitz-crusaders.de" target="_blank" rel="noopener">
+      <span class="row-icon"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></span>
+      <span class="row-text"><span class="row-title">Nächstes Spiel</span><span class="row-sub">Spielplan Regionalliga Ost</span></span>
+      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+    </a>
+    <a class="row" href="https://www.chemnitz-crusaders.de" target="_blank" rel="noopener">
+      <span class="row-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
+      <span class="row-text"><span class="row-title">Homepage</span><span class="row-sub">chemnitz-crusaders.de</span></span>
+      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+    </a>
+
+    <h2 class="section-label">Folgen</h2>
+    <div class="social">
+      <a href="https://instagram.com/chemnitzcrusaders" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a>
+      <a href="https://www.facebook.com/Chemnitz.Crusaders" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i>Facebook</a>
+      <a href="https://www.youtube.com/channel/UCRBDUVUDIm-mxZQRTYfwg2A" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" aria-hidden="true"></i>YouTube</a>
+    </div>
+
+  </nav>
+
+  <footer class="footer">
+    <a href="mailto:info@chemnitz-crusaders.de"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Kontakt</a>
+    <span>Usti-Field, Chemnitz</span>
+  </footer>
+
+</main>
+</body>
+</html>
