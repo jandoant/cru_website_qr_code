@@ -1132,6 +1132,15 @@ a.promo__cta:active {
   border: 1px solid var(--color-line);
 }
 
+/* Coloured border per discipline (matches the heading bar) */
+.session--tackle {
+  border: 3px solid var(--color-red);
+}
+
+.session--flag {
+  border: 3px solid var(--color-amber);
+}
+
 .session__head {
   display: flex;
   justify-content: space-between;
@@ -1371,15 +1380,6 @@ a.promo__cta:active {
   background: var(--color-white);
   border-color: var(--color-white);
   color: var(--color-ink);
-}
-
-/* Coloured border per discipline (matches the heading bar) */
-.theme-dark .session--tackle {
-  border: 3px solid var(--color-red);
-}
-
-.theme-dark .session--flag {
-  border: 3px solid var(--color-amber);
 }
 
 .theme-dark .page {
