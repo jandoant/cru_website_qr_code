@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Chemnitz Crusaders – Alle Links</title>
-    <meta name="description" content="Alles zu den Chemnitz Crusaders: Tryout, Gewinnspiel, Training, Staff &amp; Ehrenamt, Spielplan, Homepage und Social Media.">
+    <meta name="description" content="Alles zu den Chemnitz Crusaders: Tryout, Training, Staff &amp; Ehrenamt, Spielplan, Homepage und Social Media.">
     <meta name="theme-color" content="#f6f8f8">
 
     <!-- Open Graph -->
@@ -24,6 +24,9 @@
 
     <!-- Page styles (loaded last so they take precedence over libraries) -->
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Loads HTML components into [data-include] placeholders -->
+    <script src="assets/js/include.js" defer></script>
   </head>
 
   <body>
@@ -64,21 +67,10 @@
           <p class="promo__note">Anmeldung freiwillig – ihr könnt auch einfach vorbeikommen.</p>
         </div>
 
-        <!-- Promo: Gewinnspiel -->
-        <!-- TODO: replace with the real Gewinnspiel URL -->
-        <a class="promo" href="https://www.chemnitz-crusaders.de" target="_blank" rel="noopener">
-          <span class="promo__stripes" aria-hidden="true">
-            <span class="promo__stripe"></span>
-            <span class="promo__stripe"></span>
-            <span class="promo__stripe"></span>
-          </span>
-          <span class="promo__body">
-            <span class="promo__kicker">Aktion</span>
-            <span class="promo__title">Gewinnspiel</span>
-            <span class="promo__text">Alle Infos zur Teilnahme und zu den Preisen</span>
-          </span>
-          <span class="promo__cta">Teilnehmen<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-        </a>
+        <!-- Promo: Gewinnspiel – currently DISABLED.
+             The card lives in components/promo-gewinnspiel.html.
+             To show it: uncomment the line below (and re-add "Gewinnspiel" to the meta description). -->
+        <!-- <div data-include="components/promo-gewinnspiel.html"></div> -->
 
         <!-- Mitmachen -->
         <h2 class="links__label">Mitmachen</h2>
