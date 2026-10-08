@@ -605,6 +605,12 @@ a.promo__cta:active {
   font-size: 12px;
 }
 
+/* Large trailing chevron */
+.row__trail--large {
+  font-size: 24px;
+  padding-right: 4px;
+}
+
 /* Dark variant */
 .row--dark {
   background: var(--color-ink);
