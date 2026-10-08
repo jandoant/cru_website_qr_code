@@ -16,6 +16,10 @@
   --color-blue: #1c74cf;
   --color-blue-tint: #f2f7fd;
 
+  /* Green info accent (explanations, "Anmeldung freiwillig") */
+  --color-green: #178a4c;
+  --color-green-tint: #eef8f2;
+
   /* Flag football accent (tackle uses the brand red) */
   --color-amber: #f2a900;
 
@@ -797,6 +801,26 @@ a.promo__cta:active {
   background: var(--color-blue);
 }
 
+/* Green variant (friendly info, e.g. registration is optional) */
+.notice--green {
+  background: var(--color-green-tint);
+  border-color: var(--color-green);
+}
+
+.notice--green .notice__badge {
+  background: var(--color-green);
+}
+
+.notice--green .notice__cta {
+  border-color: var(--color-green);
+  color: var(--color-green);
+}
+
+.notice--green .notice__cta:hover {
+  background: var(--color-green);
+  color: var(--color-white);
+}
+
 .notice__cta {
   margin-top: 14px;
   display: flex;
@@ -1042,16 +1066,17 @@ a.promo__cta:active {
 }
 
 .discipline-info[open] .discipline-info__button {
-  background: var(--color-ink);
-  border-color: var(--color-ink);
-  color: var(--color-page);
+  background: var(--color-green);
+  border-color: var(--color-green);
+  color: var(--color-white);
 }
 
 .discipline-info__text {
   margin: 4px 0 4px;
   padding: 12px 14px;
   border-radius: 12px;
-  background: var(--color-chip);
+  background: var(--color-green-tint);
+  border: 2px solid var(--color-green);
   font-size: 13px;
   font-weight: 500;
   line-height: 1.5;
@@ -1205,6 +1230,16 @@ a.promo__cta:active {
 
 .theme-dark .notice--info {
   background: rgba(28, 116, 207, 0.14);
+}
+
+.theme-dark .notice--green,
+.theme-dark .discipline-info__text {
+  background: rgba(23, 138, 76, 0.16);
+}
+
+/* Slightly lighter green so outlines and text stay readable on dark */
+.theme-dark .notice--green .notice__cta {
+  color: #3fbf7a;
 }
 
 /* The "dark" button would vanish on a dark page, so it flips to light */
