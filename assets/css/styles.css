@@ -605,6 +605,12 @@ a.promo__cta:active {
   font-size: 12px;
 }
 
+/* Large trailing chevron */
+.row__trail--large {
+  font-size: 24px;
+  padding-right: 4px;
+}
+
 /* Dark variant */
 .row--dark {
   background: var(--color-ink);
@@ -619,6 +625,26 @@ a.promo__cta:active {
 
 .row--dark .row__subtitle {
   color: var(--color-on-dark-muted);
+}
+
+/* Red variant */
+.row--red {
+  background: var(--color-red);
+  color: var(--color-white);
+  border-color: var(--color-red);
+}
+
+.row--red .row__icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--color-white);
+}
+
+.row--red .row__subtitle {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.row--red:focus-visible {
+  outline-color: var(--color-ink);
 }
 
 /* Social tiles
@@ -705,6 +731,7 @@ a.promo__cta:active {
 
 /* Narrower stripes so they stay clear of the shorter subpage title */
 .hero--sub .hero__stripes {
+  top: 26px;
   width: 190px;
   right: -60px;
 }
