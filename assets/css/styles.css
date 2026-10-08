@@ -284,6 +284,95 @@ a:focus-visible {
   letter-spacing: 0.04em;
 }
 
+/* CTAs are real links in the Tryout card */
+a.promo__cta {
+  transition: transform 0.15s, background-color 0.15s, color 0.15s;
+}
+
+a.promo__cta:hover {
+  transform: translateY(-1px);
+}
+
+a.promo__cta:active {
+  transform: translateY(1px);
+}
+
+/* Two CTAs side by side */
+.promo__actions {
+  position: relative;
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.promo__actions .promo__cta {
+  margin-top: 0;
+  padding: 14px 12px;
+  font-size: 13px;
+}
+
+/* Outlined secondary CTA */
+.promo__cta--secondary {
+  justify-content: center;
+  background: transparent;
+  border: 2px solid currentColor;
+  padding: 12px 10px;
+}
+
+.promo__actions .promo__cta--secondary {
+  padding: 12px 10px;
+}
+
+/* Red variant (Tryout) – filled card, white content.
+   It holds two links, so the card itself does not move on hover. */
+.promo--red {
+  background: var(--color-red);
+  color: var(--color-white);
+  border-color: var(--color-red);
+}
+
+.promo--red:hover {
+  transform: none;
+  background: var(--color-red);
+}
+
+.promo--red:active {
+  transform: none;
+}
+
+.promo--red .promo__stripe {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.promo--red .promo__kicker {
+  color: var(--color-white);
+  opacity: 0.85;
+}
+
+.promo--red .promo__text {
+  color: var(--color-white);
+  opacity: 0.9;
+}
+
+.promo--red .promo__cta {
+  background: var(--color-white);
+  color: var(--color-red);
+}
+
+.promo--red .promo__cta--secondary {
+  background: transparent;
+  color: var(--color-white);
+}
+
+.promo--red a.promo__cta--secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.promo--red a:focus-visible {
+  outline-color: var(--color-white);
+}
+
 @keyframes promo-stripe-pulse {
   0% {
     transform: scaleX(0.35);
@@ -433,6 +522,129 @@ a:focus-visible {
 .footer__link--muted {
   color: var(--color-muted);
   font-weight: 500;
+}
+
+/* Subpage (e.g. tryout.html)
+   ========================================================================== */
+
+.back {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-ink);
+  transition: color 0.15s;
+}
+
+.back:hover {
+  color: var(--color-red);
+}
+
+/* Narrower stripes so they stay clear of the shorter subpage title */
+.hero--sub .hero__stripes {
+  width: 190px;
+  right: -60px;
+}
+
+.hero__kicker {
+  position: relative;
+  display: block;
+  margin-top: 22px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+
+.hero__kicker + .hero__title {
+  margin-top: 8px;
+}
+
+.intro {
+  margin: 0;
+  padding: 0 8px 4px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+/* Fact rows: same look as .row, but not links */
+.fact {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 16px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+}
+
+.fact__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-label);
+}
+
+.fact__value {
+  display: block;
+  margin-top: 2px;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.fact__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-red);
+}
+
+.fact__link:hover {
+  text-decoration: underline;
+}
+
+/* Big full-width call to action */
+.cta {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-red);
+  color: var(--color-white);
+  border-radius: 16px;
+  padding: 18px 20px;
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: transform 0.15s, background-color 0.15s;
+}
+
+.cta:hover {
+  background: var(--color-red-dark);
+  transform: translateY(-1px);
+}
+
+.cta:active {
+  transform: translateY(1px);
+}
+
+.cta__note {
+  margin: 0;
+  padding: 2px 8px 0;
+  font-size: 12px;
+  color: var(--color-muted);
+  text-align: center;
 }
 
 /* Accessibility
