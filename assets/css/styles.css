@@ -635,8 +635,8 @@ a.promo__cta:active {
 }
 
 .row--red .row__icon {
-  background: rgba(255, 255, 255, 0.18);
-  color: var(--color-white);
+  background: var(--color-white);
+  color: var(--color-red);
 }
 
 .row--red .row__subtitle {
