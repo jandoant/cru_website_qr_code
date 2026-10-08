@@ -98,16 +98,14 @@
         <div class="card">
           <h3 class="card__title">
             <!-- Football helmet (side view, facing right). Font Awesome Free has no football helmet. -->
-            <svg class="card__icon" viewBox="60 60 400 400" aria-hidden="true" focusable="false">
-              <!-- Shell: back, dome and chin -->
-              <path class="card__icon-line" d="M403 200c-3-23-11-40-23-55-50-60-160-65-220-30C95 150 80 230 90 302c30 6 60 10 80 23 15 10 25 25 50 27 30 2 55-12 70-32"/>
-              <!-- Front edge of the shell running into the left mask bar -->
-              <path class="card__icon-line" d="M403 243h-53c-12 0-20 8-24 20l-8 37 4 85"/>
-              <!-- Front bracket and ear hole -->
-              <path class="card__icon-solid" d="M392 190h22v56h-22Z"/>
-              <circle class="card__icon-solid" cx="238" cy="283" r="27"/>
-              <!-- Strap, second mask bar and cage -->
-              <path class="card__icon-line" d="M266 303l30 22M338 252l-6 78M324 282l100 23-20 105-82-25"/>
+            <svg class="card__icon" viewBox="0 -32 352 352" aria-hidden="true" focusable="false">
+              <!-- Drawn facing left, then mirrored so the helmet faces right -->
+              <g transform="translate(352 0) scale(-1 1)">
+                <!-- Solid shell with highlight streaks and ear hole cut out (evenodd) -->
+                <path class="card__icon-solid" fill-rule="evenodd" d="M58 108C70 60 120 18 200 12c70-4 130 38 145 108 7 40 0 90-20 120-20 22-55 22-80 10l-45-22c-15-6-22 4-28 22h-22c-2-35 0-75 10-100l-50-25-40-7Zm122-82c8-4 18-6 28-6l-2 8c-9 0-17 2-24 5Zm128 32c10 12 17 28 19 46l-7 1c-3-16-8-30-17-41Zm-73 112c12-4 26-6 40-5-1 10-3 20-7 28-11 4-23 5-35 4 0-9 0-18 2-27Z"/>
+                <!-- Face mask cage -->
+                <path class="card__icon-line" d="M66 118L26 184l-5 40 22 38 58 18 62-24M26 184l138-6M21 224l140-6M96 126l-2 150M126 136l-2 136M154 146l2 108"/>
+              </g>
             </svg>
             Tackle-Football
           </h3>
